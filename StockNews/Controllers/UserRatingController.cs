@@ -11,6 +11,7 @@ namespace StockNews.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize(Policy = "User")]
     public class UserRatingController : Controller
     {
         public readonly IUserRatingService userRatingService;

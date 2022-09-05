@@ -19,7 +19,7 @@ namespace StockNews.Controllers
             this.userService = userService;
         }
 
-        /*[Authorize(Policy = "Admin")]*/
+        [Authorize(Policy = "Admin")]
         [HttpDelete("{username}")]
         public async Task<IActionResult> DeleteUserByUsername([FromRoute] string username)
         {
@@ -35,7 +35,7 @@ namespace StockNews.Controllers
         }
 
         // id passed in user model can be whatever
-        /*[Authorize(Policy = "User")]*/
+        [Authorize(Policy = "User")]
         [HttpPut]
         public async Task<IActionResult> UpdateUsername([FromBody] UserModel userModel)
         {
